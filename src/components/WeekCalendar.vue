@@ -69,7 +69,7 @@ import {
   format, startOfWeek, endOfWeek, eachDayOfInterval,
   nextMonday, addDays, eachMonthOfInterval,
   addMonths, isEqual, startOfMonth, addYears,
-  eachYearOfInterval, startOfYear,
+  eachYearOfInterval, startOfYear, startOfDay
 } from 'date-fns';
 
 type FDate = number | Date;
@@ -92,7 +92,9 @@ export default Vue.extend({
     formatToYear: (value: any) => format(value, 'yyyy'),
   },
   computed: {
-    isEqual: () => isEqual,
+    isEqual: () => (first: FDate, second: FDate) => (
+      isEqual(startOfDay(first), startOfDay(second))
+    ),
     isEqualMoth: () => (first: FDate, second: FDate) => (
       isEqual(startOfMonth(first), startOfMonth(second))
     ),
