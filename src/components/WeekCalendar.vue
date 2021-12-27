@@ -1,6 +1,12 @@
 <template lang="html">
     <section class="week-calendar">
-        <slot name="years">
+        <slot
+          name="years"
+          :years="years"
+          :prev="prevYear"
+          :next="nextYear"
+          :isEqual="isEqualYear"
+        >
             <div class="week-calendar__years">
                 <button class="button" @click="prevYear">
                     <i class="icon gg-arrow-left-r"></i>
@@ -19,7 +25,13 @@
                 </button>
             </div>
         </slot>
-        <slot name="month">
+        <slot
+          name="months"
+          :months="months"
+          :prev="prevMonth"
+          :next="nextMonth"
+          :isEqual="isEqualMoth"
+        >
             <div class="week-calendar__months">
                 <button class="button" @click="prevMonth">
                     <i class="icon gg-arrow-left-r"></i>
@@ -38,7 +50,13 @@
                 </button>
             </div>
         </slot>
-        <slot name="days">
+        <slot
+          name="days"
+          :days="days"
+          :prev="prev"
+          :next="next"
+          :isEqual="isEqual"
+        >
             <div class="week-calendar__days">
                 <button class="button" @click="prev">
                     <i class="icon gg-arrow-left-r"></i>
