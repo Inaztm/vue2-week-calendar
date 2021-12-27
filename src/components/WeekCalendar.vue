@@ -167,59 +167,61 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style lang="scss">
 @import url('https://css.gg/arrow-left-r.css');
 @import url('https://css.gg/arrow-right-r.css');
 
-.py-3 {
-  padding-top: 0.75rem; /* 12px */
-  padding-bottom: 0.75rem; /* 12px */
-}
-
-.svg-img {
-  width: 32px;
-  height: 32px;
-}
-
-.button {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.icon {
-  color: var(--color-week-calendar-icon-color);
-}
-
 .week-calendar {
-  --color-week-calendar-accent: #599455;
-  --color-week-calendar-accent-text: #f5f5f5;
-  --color-week-calendar-border: whitesmoke;
-  --color-week-calendar-border-active-radius: 18px;
-  --color-week-calendar-icon-color: #888;
+  --week-calendar-accent-color: #599455;
+  --week-calendar-accent-text-color: #f5f5f5;
+  --week-calendar-border-color: whitesmoke;
+  --week-calendar-border-active-radius: 8px;
+  --week-calendar-icon-color: #888;
+  
   min-width: 218px;
+
+  .py-3 {
+    padding-top: 0.75rem; /* 12px */
+    padding-bottom: 0.75rem; /* 12px */
+  }
+
+  .svg-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .button {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .icon {
+    color: var(--week-calendar-icon-color);
+  }
 }
 .week-calendar__days {
   display: grid;
   padding-top: 0.75rem; /* 12px */
   padding-bottom: 0.75rem; /* 12px */
+  border: 1px solid var(--week-calendar-border-color);
   grid-template-columns: 42px repeat(7,1fr) 42px;
 }
 .week-calendar__months {
   display: grid;
   padding-top: 0.75rem; /* 12px */
   padding-bottom: 0.75rem; /* 12px */
-  border: 1px solid var(--color-week-calendar-border);
+  border: 1px solid var(--week-calendar-border-color);
   grid-template-columns: 42px repeat(3,1fr) 42px;
 }
 .week-calendar__years {
   display: grid;
   padding-top: 0.75rem; /* 12px */
   padding-bottom: 0.75rem; /* 12px */
-  border: 1px solid var(--color-week-calendar-border);
+  border: 1px solid var(--week-calendar-border-color);
   grid-template-columns: 42px repeat(3,1fr) 42px;
 }
 
@@ -249,10 +251,10 @@ export default Vue.extend({
 .week-calendar__day--active,
 .week-calendar__month--active,
 .week-calendar__year--active {
-  background-color: var(--color-week-calendar-accent);
-  color: var(--color-week-calendar-accent-text);
-  border: 1px solid var(--color-week-calendar-border);
-  border-radius: var(--color-week-calendar-border-active-radius);
+  background-color: var(--week-calendar-accent-color);
+  color: var(--week-calendar-accent-text-color);
+  border: 1px solid var(--week-calendar-border-color);
+  border-radius: var(--week-calendar-border-active-radius);
   border-width: 1px;
 }
 </style>
