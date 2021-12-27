@@ -26,7 +26,7 @@ $ npm install vue2-week-calendar --save
     components: { WeekCalendar },
     data() {
       return {
-        time1: new Date(),
+        mydate: new Date(),
       };
     },
   };
@@ -34,7 +34,7 @@ $ npm install vue2-week-calendar --save
 
 <template>
   <div>
-    <WeekCalendar v-model="time1"></WeekCalendar>
+    <WeekCalendar v-model="mydate"></WeekCalendar>
   </div>
 </template>
 ```
@@ -48,7 +48,7 @@ $ npm install vue2-week-calendar --save
 | days          | custom days template     |
 
 ```html
-<WeekCalendar v-model="time1">
+<WeekCalendar v-model="mydate">
   <template v-slot:years="{ years, next, prev, isEqual, change }">
     {{ years }}
     {{ isEqual(mydate, years[0]) }}
