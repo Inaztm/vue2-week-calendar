@@ -1,6 +1,7 @@
 # vue2-week-calendar
 
 > A Week (years, days) Component For Vue2
+![Example](screenshot.png)
 <a href="https://www.npmjs.com/package/vue2-week-calendar">
   <img src="https://img.shields.io/npm/v/vue2-week-calendar.svg" alt="npm">
 </a>
