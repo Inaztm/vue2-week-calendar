@@ -1,7 +1,8 @@
 {
   "name": "vue2-week-calendar",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "private": false,
+  "keywords": ["vue2", "calendar", "week", "mouth", "date"],
   "repository": {
     "url": "https://github.com/Inaztm/vue2-week-calendar"
   },

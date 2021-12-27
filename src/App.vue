@@ -1,6 +1,6 @@
 <template lang="html">
   <section>
-    <WeekCalendar :value="mydate"></WeekCalendar>
+    <WeekCalendar v-model="mydate"></WeekCalendar>
   </section>
 </template>
 
