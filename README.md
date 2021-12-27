@@ -39,13 +39,38 @@ $ npm install vue2-week-calendar --save
 </template>
 ```
 
-### Slots (coming soon)
+### Slots
 
 | Name          | Description              |
 | ------------- | ------------------------ |
 | months        | custom months template   |
 | years         | custom years template    |
 | days          | custom days template     |
+
+```html
+<WeekCalendar v-model="time1">
+  <template v-slot:years="{ years, next, prev, isEqual }">
+    {{ years }}
+    {{ isEqual(mydate, years[0]) }}
+    <button @click="prev">Prev</button>
+    <button @click="next">Next</button>
+  </template>
+
+  <template v-slot:months="{ months, next, prev, isEqual }">
+    {{ months }}
+    {{ isEqual(mydate, months[0]) }}
+    <button @click="prev">Prev</button>
+    <button @click="next">Next</button>
+  </template>
+
+  <template v-slot:days="{ days, next, prev, isEqual }">
+    {{ days }}
+    {{ isEqual(mydate, days[0]) }}
+    <button @click="prev">Prev</button>
+    <button @click="next">Next</button>
+  </template>
+</WeekCalendar>
+```
 
 <!-- ## ChangeLog (coming soon)
 
