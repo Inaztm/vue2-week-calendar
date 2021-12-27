@@ -1,29 +1,22 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
-  </div>
+<template lang="html">
+  <section>
+    <WeekCalendar :value="mydate"></WeekCalendar>
+  </section>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
+import Vue from 'vue';
+import WeekCalendar from './components/WeekCalendar.vue';
 
-@Component({
-  components: {
-    HelloWorld,
+export default Vue.extend({
+  data() {
+    return {
+      mydate: new Date(),
+    };
   },
-})
-export default class App extends Vue {}
+  components: { WeekCalendar },
+});
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
 </style>

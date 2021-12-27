@@ -1,15 +1,26 @@
 {
   "name": "vue2-week-calendar",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib --name vue2WeekCalendar src/main.ts",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
+  "main": "./dist/vue2WeekCalendar.common.js",
+  "browser": {
+    "./sfc": "./src/components/WeekCalendar.vue"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json"
+  ],  
   "dependencies": {
     "core-js": "^3.6.5",
+    "date-fns": "^2.27.0",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^9.1.2"
