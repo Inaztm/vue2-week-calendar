@@ -79,6 +79,11 @@ yarn serve
 yarn build
 ```
 
+### Compiles and minifies for production library
+```
+yarn build-lib
+```
+
 ### Run your unit tests
 ```
 yarn test:unit
@@ -88,6 +93,3 @@ yarn test:unit
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
