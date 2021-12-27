@@ -9,7 +9,7 @@
 </a>
 
 ## Example
-![Example|35%](screenshot.png)
+<img src="screenshot.png" width="400"/>
 
 ## Install
 
