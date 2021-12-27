@@ -19,7 +19,6 @@ $ npm install vue2-week-calendar --save
 ```html
 <script>
   import WeekCalendar from 'vue2-week-calendar';
-  import 'vue2-week-calendar/dist/vue2WeekCalendar.css';
   export default {
     components: { WeekCalendar },
     data() {
