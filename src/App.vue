@@ -1,25 +1,28 @@
 <template lang="html">
   <section>
     <WeekCalendar v-model="mydate">
-      <template v-slot:years="{ years, next, prev, isEqual }">
+      <template v-slot:years="{ years, next, prev, isEqual, change }">
         {{ years }}
         {{ isEqual(mydate, years[0]) }}
         <button @click="prev">Prev</button>
         <button @click="next">Next</button>
+        <button @click="() => change(years[0])">Change 0 index</button>
       </template>
 
-      <template v-slot:months="{ months, next, prev, isEqual }">
+      <template v-slot:months="{ months, next, prev, isEqual, change }">
         {{ months }}
         {{ isEqual(mydate, months[0]) }}
         <button @click="prev">Prev</button>
         <button @click="next">Next</button>
+        <button @click="() => change(months[0])">Change 0 index</button>
       </template>
 
-      <template v-slot:days="{ days, next, prev, isEqual }">
+      <template v-slot:days="{ days, next, prev, isEqual, change }">
         {{ days }}
         {{ isEqual(mydate, days[0]) }}
         <button @click="prev">Prev</button>
         <button @click="next">Next</button>
+        <button @click="() => change(days[0])">Change 0 index</button>
       </template>
     </WeekCalendar>
   </section>

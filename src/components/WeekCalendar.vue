@@ -6,6 +6,7 @@
           :prev="prevYear"
           :next="nextYear"
           :isEqual="isEqualYear"
+          :change="changeYear"
         >
             <div class="week-calendar__years">
                 <button class="button" @click="prevYear">
@@ -31,6 +32,7 @@
           :prev="prevMonth"
           :next="nextMonth"
           :isEqual="isEqualMoth"
+          :change="changeMonth"
         >
             <div class="week-calendar__months">
                 <button class="button" @click="prevMonth">
@@ -56,6 +58,7 @@
           :prev="prev"
           :next="next"
           :isEqual="isEqual"
+          :change="changeDate"
         >
             <div class="week-calendar__days">
                 <button class="button" @click="prev">
