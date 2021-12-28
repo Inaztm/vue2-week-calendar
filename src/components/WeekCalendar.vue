@@ -146,44 +146,39 @@ export default Vue.extend({
     },
     next(): void {
       this.viewDate = nextMonday(startOfWeek(this.viewDate, { weekStartsOn: 1 }));
-      this.updateDates();
     },
     prev(): void {
       this.viewDate = addDays(startOfWeek(this.viewDate, { weekStartsOn: 1 }), -7);
-      this.updateDates();
     },
     changeDate(value: FDate): void {
       this.$emit('input', value);
     },
     changeMonth(value: FDate): void {
       this.viewDate = value;
-      this.updateDates();
     },
     changeYear(value: FDate): void {
       this.viewDate = value;
-      this.updateDates();
     },
     nextYear(): void {
       this.viewDate = addYears(this.viewDate, 1);
-      this.updateDates();
     },
     prevYear(): void {
       this.viewDate = addYears(this.viewDate, -1);
-      this.updateDates();
     },
     nextMonth(): void {
       this.viewDate = addMonths(this.viewDate, 1);
-      this.updateDates();
     },
     prevMonth(): void {
       this.viewDate = addMonths(this.viewDate, -1);
-      this.updateDates();
     },
   },
   watch: {
     // eslint-disable-next-line
     value: function() {
       this.viewDate = this.value as FDate;
+    },
+    // eslint-disable-next-line
+    viewDate: function() {
       this.updateDates();
     },
   },
