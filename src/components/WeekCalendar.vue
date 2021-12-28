@@ -9,8 +9,8 @@
           :change="changeYear"
         >
             <div class="week-calendar__years">
-                <button class="button" @click="prevYear">
-                    <i class="icon gg-arrow-left-r"></i>
+                <button class="week-calendar__button" @click="prevYear">
+                    <i class="week-calendar__icon gg-arrow-left-r"></i>
                 </button>
                 <section
                     class="week-calendar__year"
@@ -21,8 +21,8 @@
                 >
                     {{ item | formatToYear }}
                 </section>
-                <button class="button" @click="nextYear">
-                    <i class="icon gg-arrow-right-r"></i>
+                <button class="week-calendar__button" @click="nextYear">
+                    <i class="week-calendar__icon gg-arrow-right-r"></i>
                 </button>
             </div>
         </slot>
@@ -35,8 +35,8 @@
           :change="changeMonth"
         >
             <div class="week-calendar__months">
-                <button class="button" @click="prevMonth">
-                    <i class="icon gg-arrow-left-r"></i>
+                <button class="week-calendar__button" @click="prevMonth">
+                    <i class="week-calendar__icon gg-arrow-left-r"></i>
                 </button>
                 <section
                     class="week-calendar__month"
@@ -47,8 +47,8 @@
                 >
                     {{ item | formatToMonthYear }}
                 </section>
-                <button class="button" @click="nextMonth">
-                    <i class="icon gg-arrow-right-r"></i>
+                <button class="week-calendar__button" @click="nextMonth">
+                    <i class="week-calendar__icon gg-arrow-right-r"></i>
                 </button>
             </div>
         </slot>
@@ -61,8 +61,8 @@
           :change="changeDate"
         >
             <div class="week-calendar__days">
-                <button class="button" @click="prev">
-                    <i class="icon gg-arrow-left-r"></i>
+                <button class="week-calendar__button" @click="prev">
+                    <i class="week-calendar__icon gg-arrow-left-r"></i>
                 </button>
                 <section
                     class="week-calendar__day"
@@ -75,8 +75,8 @@
                     <br >
                     {{ item | formatToDateDay }}
                 </section>
-                <button class="button" @click="next">
-                    <i class="icon gg-arrow-right-r"></i>
+                <button class="week-calendar__button" @click="next">
+                    <i class="week-calendar__icon gg-arrow-right-r"></i>
                 </button>
             </div>
         </slot>
@@ -198,17 +198,7 @@ export default Vue.extend({
   
   min-width: 218px;
 
-  .py-3 {
-    padding-top: 0.75rem; /* 12px */
-    padding-bottom: 0.75rem; /* 12px */
-  }
-
-  .svg-img {
-    width: 32px;
-    height: 32px;
-  }
-
-  .button {
+  &__button {
     display: flex;
     align-content: center;
     align-items: center;
@@ -217,62 +207,58 @@ export default Vue.extend({
     cursor: pointer;
   }
 
-  .icon {
+  &__icon {
     color: var(--week-calendar-icon-color);
   }
-}
-.week-calendar__days {
-  display: grid;
-  padding-top: 0.75rem; /* 12px */
-  padding-bottom: 0.75rem; /* 12px */
-  border: 1px solid var(--week-calendar-border-color);
-  grid-template-columns: 42px repeat(7,1fr) 42px;
-}
-.week-calendar__months {
-  display: grid;
-  padding-top: 0.75rem; /* 12px */
-  padding-bottom: 0.75rem; /* 12px */
-  border: 1px solid var(--week-calendar-border-color);
-  grid-template-columns: 42px repeat(3,1fr) 42px;
-}
-.week-calendar__years {
-  display: grid;
-  padding-top: 0.75rem; /* 12px */
-  padding-bottom: 0.75rem; /* 12px */
-  border: 1px solid var(--week-calendar-border-color);
-  grid-template-columns: 42px repeat(3,1fr) 42px;
-}
 
-.week-calendar__day,
-.week-calendar__month,
-.week-calendar__year {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  user-select: none;
-  align-items: center;
-  justify-content: center;
-}
-.week-calendar__month,
-.week-calendar__year {
-  margin-left: 0.075rem; /* 1.2px */
-  margin-right: 0.075rem; /* 1.2px */
-  padding-left: 0.25rem; /* 4px */
-  padding-right: 0.25rem; /* 4px */
-  overflow: hidden;
-  white-space: nowrap;
-  -o-text-overflow: ellipsis;
-  text-overflow: ellipsis;
-}
+  &__days,
+  &__months,
+  &__years {
+    display: grid;
+    padding-top: 0.75rem; /* 12px */
+    padding-bottom: 0.75rem; /* 12px */
+    border: 1px solid var(--week-calendar-border-color);
+  }
 
-.week-calendar__day--active,
-.week-calendar__month--active,
-.week-calendar__year--active {
-  background-color: var(--week-calendar-accent-color);
-  color: var(--week-calendar-accent-text-color);
-  border: 1px solid var(--week-calendar-border-color);
-  border-radius: var(--week-calendar-border-active-radius);
-  border-width: 1px;
+  &__days {
+    grid-template-columns: 42px repeat(7,1fr) 42px;
+  }
+
+  &__months,
+  &__years {
+    grid-template-columns: 42px repeat(3,1fr) 42px;
+  }
+
+  &__month,
+  &__year {
+    margin-left: 0.075rem; /* 1.2px */
+    margin-right: 0.075rem; /* 1.2px */
+    padding-left: 0.25rem; /* 4px */
+    padding-right: 0.25rem; /* 4px */
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+  }
+
+  &__day,
+  &__month,
+  &__year {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    
+    &--active {
+      background-color: var(--week-calendar-accent-color);
+      color: var(--week-calendar-accent-text-color);
+      border: 1px solid var(--week-calendar-border-color);
+      border-radius: var(--week-calendar-border-active-radius);
+      border-width: 1px;
+    }
+  }
 }
 </style>
