@@ -9,7 +9,7 @@
           :change="changeYear"
         >
             <div class="week-calendar__years">
-                <button class="week-calendar__button" @click="prevYear">
+                <button class="week-calendar__button week-calendar__justify-center" @click="prevYear">
                     <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
@@ -22,7 +22,7 @@
                     {{ item | formatToYear(yearsFormat) }}
                 </section>
                 <button
-                  class="week-calendar__button week-calendar__rigth"
+                  class="week-calendar__button week-calendar__justify-center"
                   @click="nextYear"
                 >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
@@ -38,7 +38,7 @@
           :change="changeMonth"
         >
             <div class="week-calendar__months">
-                <button class="week-calendar__button" @click="prevMonth">
+                <button class="week-calendar__button week-calendar__justify-center" @click="prevMonth">
                     <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
@@ -51,7 +51,7 @@
                     {{ item | formatToMonthYear(monthFormat) }}
                 </section>
                 <button
-                  class="week-calendar__button week-calendar__rigth"
+                  class="week-calendar__button week-calendar__justify-center"
                   @click="nextMonth"
                 >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
@@ -67,7 +67,7 @@
           :change="changeDate"
         >
             <div class="week-calendar__days">
-                <button class="week-calendar__button" @click="prev">
+                <button class="week-calendar__button week-calendar__justify-center" @click="prev">
                     <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
@@ -82,7 +82,7 @@
                     {{ item | formatToDateDay }}
                 </section>
                 <button
-                  class="week-calendar__button week-calendar__rigth"
+                  class="week-calendar__button week-calendar__justify-center"
                   @click="next"
                 >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
@@ -207,8 +207,12 @@ export default Vue.extend({
   
   min-width: 218px;
 
-  &__rigth {
+  &__justify-rigth {
     justify-content: flex-end;
+  }
+
+  &__justify-center {
+    justify-content: center;
   }
 
   &__button {
@@ -228,8 +232,8 @@ export default Vue.extend({
   &__months,
   &__years {
     display: grid;
-    padding-top: 0.75rem; /* 12px */
-    padding-bottom: 0.75rem; /* 12px */
+    padding-top: 0.3rem; /* 12px */
+    padding-bottom: 0.3rem; /* 12px */
     border: 1px solid var(--week-calendar-border-color);
   }
 
@@ -246,8 +250,6 @@ export default Vue.extend({
   &__year {
     margin-left: 0.075rem; /* 1.2px */
     margin-right: 0.075rem; /* 1.2px */
-    padding-left: 0.25rem; /* 4px */
-    padding-right: 0.25rem; /* 4px */
     overflow: hidden;
     white-space: nowrap;
     -o-text-overflow: ellipsis;
@@ -264,6 +266,7 @@ export default Vue.extend({
     user-select: none;
     align-items: center;
     justify-content: center;
+    padding: 0.25rem;
     
     &--active {
       background-color: var(--week-calendar-accent-color);

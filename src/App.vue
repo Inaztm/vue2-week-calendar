@@ -1,5 +1,5 @@
 <template lang="html">
-  <section>
+  <section style="width: 28.6%; margin: 0 auto">
     <WeekCalendar v-model="mydate" month-format="MMMM" years-format="yyy">
       <!-- <template v-slot:years="{ years, next, prev, isEqual, change }">
         {{ years }}
