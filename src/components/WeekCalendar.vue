@@ -108,7 +108,7 @@ export default Vue.extend({
   name: 'WeekCalendar',
   data() {
     return {
-      viewDate: this.value,
+      viewDate: new Date() as FDate,
       days: [] as Date[],
       months: [] as Date[],
       years: [] as Date[],
@@ -133,6 +133,7 @@ export default Vue.extend({
     ),
   },
   mounted(): void {
+    this.viewDate = this.value;
     this.updateDates();
   },
   methods: {

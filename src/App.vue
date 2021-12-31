@@ -25,6 +25,7 @@
         <button @click="() => change(days[0])">Change 0 index</button>
       </template> -->
     </WeekCalendar>
+    {{ mydate }}
   </section>
 </template>
 
