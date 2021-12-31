@@ -266,7 +266,7 @@ export default Vue.extend({
     user-select: none;
     align-items: center;
     justify-content: center;
-    padding: 0.25rem;
+    padding: 0.08rem 0.25rem;
     
     &--active {
       background-color: var(--week-calendar-accent-color);
