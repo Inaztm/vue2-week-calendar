@@ -208,7 +208,7 @@ export default Vue.extend({
   min-width: 218px;
 
   &__rigth {
-    text-align: right;
+    justify-content: flex-end;
   }
 
   &__button {
