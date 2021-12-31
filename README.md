@@ -39,6 +39,27 @@ $ npm install vue2-week-calendar --save
 </template>
 ```
 
+### Props
+| Name          | Description                               |
+| ------------- | ----------------------------------------- |
+| month-format  | "string" type format (date-fns formats)   |
+| years-format  | "string" type format (date-fns formats)   |
+
+### Css vars
+```html
+<WeekCalendar class="custom-week-calendar" v-model="mydate"></WeekCalendar>
+```
+
+```css
+  .custom-week-calendar {
+    --week-calendar-accent-color: #599455;
+    --week-calendar-accent-text-color: #f5f5f5;
+    --week-calendar-border-color: whitesmoke;
+    --week-calendar-border-active-radius: 8px;
+    --week-calendar-icon-color: #888;
+  }
+```
+
 ### Slots
 
 | Name          | Description              |
