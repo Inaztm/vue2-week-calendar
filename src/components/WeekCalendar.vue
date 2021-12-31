@@ -19,9 +19,12 @@
                     :class="{ 'week-calendar__year--active': isEqualYear(item, viewDate) }"
                     @click="() => changeYear(item)"
                 >
-                    {{ item | formatToYear }}
+                    {{ item | formatToYear(yearsFormat) }}
                 </section>
-                <button class="week-calendar__button" @click="nextYear">
+                <button
+                  class="week-calendar__button week-calendar__rigth"
+                  @click="nextYear"
+                >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
@@ -45,9 +48,12 @@
                     :class="{ 'week-calendar__month--active': isEqualMoth(item, viewDate) }"
                     @click="() => changeMonth(item)"
                 >
-                    {{ item | formatToMonthYear }}
+                    {{ item | formatToMonthYear(monthFormat) }}
                 </section>
-                <button class="week-calendar__button" @click="nextMonth">
+                <button
+                  class="week-calendar__button week-calendar__rigth"
+                  @click="nextMonth"
+                >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
@@ -75,7 +81,10 @@
                     <br >
                     {{ item | formatToDateDay }}
                 </section>
-                <button class="week-calendar__button" @click="next">
+                <button
+                  class="week-calendar__button week-calendar__rigth"
+                  @click="next"
+                >
                     <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
@@ -105,12 +114,12 @@ export default Vue.extend({
       years: [] as Date[],
     };
   },
-  props: ['value'],
+  props: ['value', 'monthFormat', 'yearsFormat'],
   filters: {
-    formatToDay: (value: FDate) => format(value, 'iiiiii'),
-    formatToDateDay: (value: any) => format(value, 'd'),
-    formatToMonthYear: (value: any) => format(value, 'MMMM'),
-    formatToYear: (value: any) => format(value, 'yyyy'),
+    formatToDay: (value: FDate, formatTo: string) => format(value, formatTo || 'iiiiii'),
+    formatToDateDay: (value: any, formatTo: string) => format(value, formatTo || 'd'),
+    formatToMonthYear: (value: any, formatTo: string) => format(value, formatTo || 'MMM'),
+    formatToYear: (value: any, formatTo: string) => format(value, formatTo || 'yyyy'),
   },
   computed: {
     isEqual: () => (first: FDate, second: FDate) => (
@@ -197,6 +206,10 @@ export default Vue.extend({
   --week-calendar-icon-color: #888;
   
   min-width: 218px;
+
+  &__rigth {
+    text-align: right;
+  }
 
   &__button {
     display: flex;

@@ -1,6 +1,6 @@
 <template lang="html">
   <section>
-    <WeekCalendar v-model="mydate">
+    <WeekCalendar v-model="mydate" month-format="MMMM" years-format="yyy">
       <!-- <template v-slot:years="{ years, next, prev, isEqual, change }">
         {{ years }}
         {{ isEqual(mydate, years[0]) }}
