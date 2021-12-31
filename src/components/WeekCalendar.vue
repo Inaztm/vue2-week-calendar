@@ -10,7 +10,7 @@
         >
             <div class="week-calendar__years">
                 <button class="week-calendar__button" @click="prevYear">
-                    <i class="week-calendar__icon gg-arrow-left-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
                     class="week-calendar__year"
@@ -22,7 +22,7 @@
                     {{ item | formatToYear }}
                 </section>
                 <button class="week-calendar__button" @click="nextYear">
-                    <i class="week-calendar__icon gg-arrow-right-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
         </slot>
@@ -36,7 +36,7 @@
         >
             <div class="week-calendar__months">
                 <button class="week-calendar__button" @click="prevMonth">
-                    <i class="week-calendar__icon gg-arrow-left-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
                     class="week-calendar__month"
@@ -48,7 +48,7 @@
                     {{ item | formatToMonthYear }}
                 </section>
                 <button class="week-calendar__button" @click="nextMonth">
-                    <i class="week-calendar__icon gg-arrow-right-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
         </slot>
@@ -62,7 +62,7 @@
         >
             <div class="week-calendar__days">
                 <button class="week-calendar__button" @click="prev">
-                    <i class="week-calendar__icon gg-arrow-left-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-left"></i>
                 </button>
                 <section
                     class="week-calendar__day"
@@ -76,7 +76,7 @@
                     {{ item | formatToDateDay }}
                 </section>
                 <button class="week-calendar__button" @click="next">
-                    <i class="week-calendar__icon gg-arrow-right-r"></i>
+                    <i class="week-calendar__icon gg-arrow-long-right"></i>
                 </button>
             </div>
         </slot>
@@ -186,8 +186,8 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-@import url('https://css.gg/arrow-left-r.css');
-@import url('https://css.gg/arrow-right-r.css');
+@import url('https://css.gg/arrow-long-left.css');
+@import url('https://css.gg/arrow-long-right.css');
 
 .week-calendar {
   --week-calendar-accent-color: #599455;
