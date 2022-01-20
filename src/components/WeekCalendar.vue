@@ -94,7 +94,7 @@
 
 <script lang="ts">
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import Vue from 'vue';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   format, startOfWeek, endOfWeek, eachDayOfInterval,
   nextMonday, addDays, eachMonthOfInterval,
@@ -104,7 +104,7 @@ import {
 
 type FDate = number | Date;
 
-export default Vue.extend({
+export default {
   name: 'WeekCalendar',
   data() {
     return {
@@ -133,66 +133,84 @@ export default Vue.extend({
     ),
   },
   mounted(): void {
+    // @ts-ignore
     this.viewDate = this.value;
+    // @ts-ignore
     this.updateDates();
   },
   methods: {
     updateDates(): void {
+      // @ts-ignore
+      const date = this.viewDate;
       const days = eachDayOfInterval({
-        start: startOfWeek(this.viewDate, { weekStartsOn: 1 }),
-        end: endOfWeek(this.viewDate, { weekStartsOn: 1 }),
+        start: startOfWeek(date, { weekStartsOn: 1 }),
+        end: endOfWeek(date, { weekStartsOn: 1 }),
       });
       const months = eachMonthOfInterval({
-        start: addMonths(this.viewDate, -1),
-        end: addMonths(this.viewDate, 1),
+        start: addMonths(date, -1),
+        end: addMonths(date, 1),
       });
       const years = eachYearOfInterval({
-        start: addYears(this.viewDate, -1),
-        end: addYears(this.viewDate, 1),
+        start: addYears(date, -1),
+        end: addYears(date, 1),
       });
+      // @ts-ignore
       this.days = days;
+      // @ts-ignore
       this.months = months;
+      // @ts-ignore
       this.years = years;
     },
     next(): void {
+      // @ts-ignore
       this.viewDate = nextMonday(startOfWeek(this.viewDate, { weekStartsOn: 1 }));
     },
     prev(): void {
+      // @ts-ignore
       this.viewDate = addDays(startOfWeek(this.viewDate, { weekStartsOn: 1 }), -7);
     },
     changeDate(value: FDate): void {
+      // @ts-ignore
       this.$emit('input', value);
     },
     changeMonth(value: FDate): void {
+      // @ts-ignore
       this.viewDate = value;
     },
     changeYear(value: FDate): void {
+      // @ts-ignore
       this.viewDate = value;
     },
     nextYear(): void {
+      // @ts-ignore
       this.viewDate = addYears(this.viewDate, 1);
     },
     prevYear(): void {
+      // @ts-ignore
       this.viewDate = addYears(this.viewDate, -1);
     },
     nextMonth(): void {
+      // @ts-ignore
       this.viewDate = addMonths(this.viewDate, 1);
     },
     prevMonth(): void {
+      // @ts-ignore
       this.viewDate = addMonths(this.viewDate, -1);
     },
   },
   watch: {
     // eslint-disable-next-line
     value: function() {
+      // @ts-ignore
       this.viewDate = this.value as FDate;
     },
     // eslint-disable-next-line
     viewDate: function() {
+      // @ts-ignore
       this.updateDates();
     },
   },
-});
+};
 </script>
 
 <style lang="scss">
